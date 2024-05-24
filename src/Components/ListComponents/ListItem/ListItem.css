@@ -1,0 +1,21 @@
+.list-item{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.text-container{
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.delete-container{
+    display: flex;
+    justify-content: right;
+    gap: 0.5rem;
+}
+

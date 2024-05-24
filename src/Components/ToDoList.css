@@ -1,0 +1,22 @@
+.header{
+    height: 5vh;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title{
+    font-size: 2rem;
+    text-align: left;
+}
+
+.body{
+    height: 90vh;
+}
+
+.footer{
+    height: 5vh;
+    background-color: lightgray;
+    
+}
