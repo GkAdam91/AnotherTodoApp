@@ -1,6 +1,5 @@
-import "./ListItem.css";
+import classes from "./ListItem.module.css";
 import { ItemClass } from "../../../Models/ItemClass";
-import { ToDoListItemProps } from "../../../Models/ToDoListItemProps";
 
 export const ListItem: React.FC<{
   item: ItemClass;
@@ -10,12 +9,12 @@ export const ListItem: React.FC<{
   let { text, id } = item;
 
   return (
-    <div className="list-item">
-      <div className="text-container">
+    <div className={classes.item}>
+      <div className={classes.textContainer}>
         <button onClick={itemClicked.bind(null, id)}>done</button>
         <li>{text}</li>
       </div>
-      <div className="delete-container">
+      <div className={classes.deleteContainer}>
         <button onClick={itemDeleted.bind(null, id)}>delete</button>
       </div>
     </div>

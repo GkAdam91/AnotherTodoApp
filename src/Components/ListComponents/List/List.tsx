@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./List.css";
 import { ItemClass } from "../../../Models/ItemClass";
 import { ListItem } from "../ListItem/ListItem";
 import { ToDoListItemProps } from "../../../Models/ToDoListItemProps";

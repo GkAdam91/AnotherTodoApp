@@ -1,7 +1,3 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
 import ToDoList from "./Components/ToDoList";
 import { ItemClass } from "./Models/ItemClass";
 
