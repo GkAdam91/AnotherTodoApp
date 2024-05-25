@@ -1,18 +1,21 @@
+import { useState } from "react";
 import ToDoList from "./Components/ToDoList";
 import { ItemClass } from "./Models/ItemClass";
 
 function App() {
-  const items: ItemClass[] = [
+  const [items, setItems] = useState<ItemClass[]>([
     new ItemClass("Buy milk", 1),
     new ItemClass("Buy bread", 2),
-  ];
+  ]);
 
   const itemCLicked = (id: number) => {
     console.log("Item clicked: ", id);
   };
 
   const itemDeleted = (id: number) => {
-    console.log("Item deleted: ", id);
+    setItems((prevItems) => {
+      return prevItems.filter((item) => item.id !== id);
+    });
   };
 
   return (
