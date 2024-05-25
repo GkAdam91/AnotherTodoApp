@@ -3,24 +3,18 @@ import "./List.css";
 import { ItemClass } from "../../../Models/ItemClass";
 import { ListItem } from "../ListItem/ListItem";
 import { ToDoListItemProps } from "../../../Models/ToDoListItemProps";
-interface ListProps {
-  items: ItemClass[];
-  ClickHandler: Function;
-  DeleteHandler: Function;
-}
 
-export const List = (
-  props: ListProps
-) => {
+export const List: React.FC<ToDoListItemProps> = (props) => {
   return (
     <div>
       <ul>
         {props.items.map((item: ItemClass) => {
           return (
             <ListItem
+              key={item.id}
               item={item}
-              ClickHandler={props.ClickHandler}
-              DeleteHandler={props.DeleteHandler}
+              itemClicked={props.itemClicked}
+              itemDeleted={props.itemDeleted}
             />
           );
         })}

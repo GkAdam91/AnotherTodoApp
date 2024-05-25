@@ -2,23 +2,21 @@ import "./ListItem.css";
 import { ItemClass } from "../../../Models/ItemClass";
 import { ToDoListItemProps } from "../../../Models/ToDoListItemProps";
 
-interface ListItemProps {
+export const ListItem: React.FC<{
   item: ItemClass;
-  ClickHandler: Function;
-  DeleteHandler: Function;
-}
-
-export const ListItem = (props: ListItemProps) => {
-  let { text, id } = props.item;
+  itemClicked: (id: number) => void;
+  itemDeleted: (id: number) => void;
+}> = ({ item, itemClicked, itemDeleted, ...props }) => {
+  let { text, id } = item;
 
   return (
     <div className="list-item">
       <div className="text-container">
-        <button onClick={props.ClickHandler.bind(null, id)}>done</button>
+        <button onClick={itemClicked.bind(null, id)}>done</button>
         <li>{text}</li>
       </div>
       <div className="delete-container">
-        <button onClick={props.DeleteHandler.bind(null, id)}>delete</button>
+        <button onClick={itemDeleted.bind(null, id)}>delete</button>
       </div>
     </div>
   );

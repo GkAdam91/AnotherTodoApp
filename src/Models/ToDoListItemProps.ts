@@ -1,7 +1,7 @@
-import { ItemClass } from './ItemClass';
+import { ItemClass } from "./ItemClass";
 
 export interface ToDoListItemProps {
-    item: ItemClass;
-    itemClicked: () => void;
-    itemDeleted: () => void;
-  }
+  items: ItemClass[];
+  itemClicked: (id: number) => void;
+  itemDeleted: (id: number) => void;
+}

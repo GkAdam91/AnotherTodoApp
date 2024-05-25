@@ -1,36 +1,11 @@
 import "./ToDoList.css";
 import { List } from "./ListComponents/List/List";
-import { ItemClass } from "../Models/ItemClass";
 import { ToDoListItemProps } from "../Models/ToDoListItemProps";
 
-// const items: ToDoListItemProps[] = [
-//   {
-//     item: new ItemClass("item 1"),
-//     itemClicked: () => console.log("item 1 clicked"),
-//     itemDeleted: () => console.log("item 1 deleted"),
-//   },
-//   {
-//     item: new ItemClass("item2"),
-//     itemClicked: () => console.log("item 1 clicked"),
-//     itemDeleted: () => console.log("item 1 deleted"),
-//   },
-//   {
-//     item: new ItemClass("item3"),
-//     itemClicked: () => console.log("item 1 clicked"),
-//     itemDeleted: () => console.log("item 1 deleted"),
-//   },
-// ];
-
-const items: ItemClass[] = [
-  new ItemClass("item 1", 1),
-  new ItemClass("item2", 2),
-  new ItemClass("item3", 3),
-];
-
-const ClickHandler = (id: number) => console.log(`clicked ${id}`);
-const DeleteHandler = (id: number) => console.log(`deleted ${id}`);
-
-const ToDoList = () => {
+const ToDoList: React.FC<ToDoListItemProps> = (props) => {
+  console.log("🚀 ~ props:", props)
+  
+  
   return (
     <div>
       <div className="header">
@@ -39,9 +14,9 @@ const ToDoList = () => {
       </div>
       <div className="body">
         <List
-          items={items}
-          ClickHandler={ClickHandler}
-          DeleteHandler={DeleteHandler}
+          items={props.items}
+          itemClicked={props.itemClicked}
+          itemDeleted={props.itemDeleted}
         ></List>
       </div>
       <div className="footer">
