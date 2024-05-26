@@ -1,19 +1,18 @@
 import * as React from "react";
 import { ItemClass } from "../../../Models/ItemClass";
 import { ListItem } from "../ListItem/ListItem";
-import { ToDoListItemProps } from "../../../Models/ToDoListItemProps";
 import classes from "./List.module.css";
+import { TodoListContext } from "../../../store/todolist-context";
 
-export const List: React.FC<ToDoListItemProps> = (props) => {
+export const List: React.FC = () => {
+  const todoListCtx = React.useContext(TodoListContext);
   return (
     <ul className={classes.list}>
-      {props.items.map((item: ItemClass) => {
+      {todoListCtx.items.map((item: ItemClass) => {
         return (
           <ListItem
             key={item.id}
             item={item}
-            itemClicked={props.itemClicked}
-            itemDeleted={props.itemDeleted}
           />
         );
       })}
