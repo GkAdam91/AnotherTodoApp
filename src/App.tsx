@@ -10,7 +10,7 @@ function App() {
     new ItemClass("Buy bread"),
     new ItemClass("Buy milk"),
     new ItemClass(
-      "Buy breadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbreadbread"
+      "Buy bread and other things even though it makes no sense"
     ),
     new ItemClass("Buy milk"),
     new ItemClass("Buy bread and other things even though it makes no sense"),
@@ -30,8 +30,16 @@ function App() {
     new ItemClass("Buy bread"),
   ]);
 
-  const itemCLicked = (id: string) => {
-    console.log("Item clicked: ", id);
+  const itemClicked = (id: string) => {
+    console.log("Item clicked", id);
+    
+    const updatedItems = items.map((item) => {
+      if (item.id === id) {
+        item.toggleDone();
+      }
+      return item;
+    });
+    setItems(updatedItems);
   };
 
   const itemDeleted = (id: string) => {
@@ -43,7 +51,7 @@ function App() {
   return (
     <ToDoList
       items={items}
-      itemClicked={itemCLicked}
+      itemClicked={itemClicked}
       itemDeleted={itemDeleted}
     />
   );

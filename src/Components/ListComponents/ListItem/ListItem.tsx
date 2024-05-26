@@ -11,7 +11,10 @@ export const ListItem: React.FC<{
   return (
     <li className={classes.item}>
       <div className={classes.textContainer}>
-        <button onClick={itemClicked.bind(null, id)}>done</button>
+        <button
+          className={classes.toggleButton + " " + (item.done ? classes.done : "")}
+          onClick={itemClicked.bind(null, id)}
+        />
         <p>{text}</p>
       </div>
       <div className={classes.deleteContainer}>
