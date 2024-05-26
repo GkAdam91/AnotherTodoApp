@@ -1,6 +1,7 @@
 .list {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   justify-content: center;
   align-items: flex-start;
   /* width: max-content; */
