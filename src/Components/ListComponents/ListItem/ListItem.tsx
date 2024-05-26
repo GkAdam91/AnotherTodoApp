@@ -3,8 +3,8 @@ import { ItemClass } from "../../../Models/ItemClass";
 
 export const ListItem: React.FC<{
   item: ItemClass;
-  itemClicked: (id: number) => void;
-  itemDeleted: (id: number) => void;
+  itemClicked: (id: string) => void;
+  itemDeleted: (id: string) => void;
 }> = ({ item, itemClicked, itemDeleted, ...props }) => {
   let { text, id } = item;
 

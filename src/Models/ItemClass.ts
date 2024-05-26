@@ -1,11 +1,11 @@
 export class ItemClass {
   text: string;
   done: boolean;
-  id: number;
-  constructor(text: string, id: number) {
+  id: string;
+  constructor(text: string) {
     this.text = text;
     this.done = false;
-    this.id = id;
+    this.id = crypto.randomUUID();
   }
 
   toggleDone() {
