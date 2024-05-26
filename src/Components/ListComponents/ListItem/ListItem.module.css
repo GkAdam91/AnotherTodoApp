@@ -3,7 +3,7 @@
   justify-content: center;
   gap: 1rem;
   list-style: none;
-  width: max-content;
+  width: 100%;
 }
 
 .textContainer {
@@ -13,11 +13,12 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 0.5rem;
-  min-width: 10rem;
+  flex: 1;
 }
 
 .deleteContainer {
   display: flex;
   justify-content: right;
   gap: 0.5rem;
+  flex-shrink: 0;
 }

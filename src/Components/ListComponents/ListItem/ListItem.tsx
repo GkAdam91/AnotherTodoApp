@@ -9,14 +9,14 @@ export const ListItem: React.FC<{
   let { text, id } = item;
 
   return (
-    <div className={classes.item}>
+    <li className={classes.item}>
       <div className={classes.textContainer}>
         <button onClick={itemClicked.bind(null, id)}>done</button>
-        <li>{text}</li>
+        <p>{text}</p>
       </div>
       <div className={classes.deleteContainer}>
         <button onClick={itemDeleted.bind(null, id)}>delete</button>
       </div>
-    </div>
+    </li>
   );
 };
