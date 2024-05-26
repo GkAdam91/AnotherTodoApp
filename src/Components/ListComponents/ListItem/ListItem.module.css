@@ -17,8 +17,6 @@
 }
 
 .deleteContainer {
-  display: flex;
-  justify-content: right;
-  gap: 0.5rem;
   flex-shrink: 0;
+  margin: auto;
 }

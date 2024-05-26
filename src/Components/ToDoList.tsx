@@ -9,13 +9,13 @@ const ToDoList: React.FC<ToDoListItemProps> = (props) => {
         <div className={classes.title}>My todo list</div>
         <div className={classes.searchBar}>Search bar</div>
       </header>
-      <div className={classes.main}>
+      <main className={classes.main}>
         <List
           items={props.items}
           itemClicked={props.itemClicked}
           itemDeleted={props.itemDeleted}
         ></List>
-      </div>
+      </main>
       <footer className={classes.footer}>
         <p>Footer</p>
       </footer>

@@ -1,13 +1,10 @@
 .header {
+  grid-area: header;
   background-color: lightgray;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  position: fixed;
-  top: 0;
   width: 100%;
-  padding: 1rem;
-  z-index: 1;
 }
 
 .title {
@@ -16,17 +13,12 @@
 }
 
 .main {
-  display: flex;
-  top:5rem;
-  justify-content: center;
-  gap: 1rem;
-  margin: auto;
-  position: relative;
+  grid-area: main;
+  overflow: auto;
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  grid-area: footer;
   background-color: lightgray;
   width: 100%;
 }
