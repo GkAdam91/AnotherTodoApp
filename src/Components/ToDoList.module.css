@@ -1,22 +1,31 @@
-.header{
-    height: 5vh;
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.header {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
 }
 
-.title{
-    font-size: 2rem;
-    text-align: left;
+.title {
+  font-size: 2rem;
+  text-align: left;
 }
 
-.body{
-    height: 90vh;
+.main {
+  display: flex;
+  top:4rem;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  position: relative;
 }
 
-.footer{
-    height: 5vh;
-    background-color: lightgray;
-    
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: lightgray;
+  width: 100%;
 }

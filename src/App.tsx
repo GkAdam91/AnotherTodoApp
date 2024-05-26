@@ -5,6 +5,16 @@ import { ItemClass } from "./Models/ItemClass";
 function App() {
   const [items, setItems] = useState<ItemClass[]>([
     new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy breadfdfdfsfsfwefwecvwerfwfwfwfwfwfwfwfwefwefwfwefwfwcwecwcwe", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
+    new ItemClass("Buy bread", 2),new ItemClass("Buy milk", 1),
     new ItemClass("Buy bread", 2),
   ]);
 

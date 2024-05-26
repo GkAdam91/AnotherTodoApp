@@ -4,22 +4,22 @@ import { ToDoListItemProps } from "../Models/ToDoListItemProps";
 
 const ToDoList: React.FC<ToDoListItemProps> = (props) => {
   return (
-    <div>
-      <div className={classes.header}>
+    <>
+      <header className={classes.header}>
         <div className={classes.title}>My todo list</div>
         <div className={classes.searchBar}>Search bar</div>
-      </div>
-      <div className={classes.body}>
+      </header>
+      <div className={classes.main}>
         <List
           items={props.items}
           itemClicked={props.itemClicked}
           itemDeleted={props.itemDeleted}
         ></List>
       </div>
-      <div className={classes.footer}>
+      <footer className={classes.footer}>
         <p>Footer</p>
-      </div>
-    </div>
+      </footer>
+    </>
   );
 };
 
