@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
   padding: 0;
 }
 
@@ -14,7 +13,10 @@ html {
 }
 
 #root{
-  height: 100vh;
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
