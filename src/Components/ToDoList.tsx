@@ -1,5 +1,6 @@
 import classes from "./ToDoList.module.css";
 import { List } from "./ListComponents/List/List";
+import NewItem from "./ListComponents/NewItem/NewItem";
 
 const ToDoList: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const ToDoList: React.FC = () => {
         <List></List>
       </main>
       <footer className={classes.footer}>
-        <p>Footer</p>
+        <NewItem></NewItem>
       </footer>
     </>
   );
