@@ -10,10 +10,12 @@ export const ListItem: React.FC<{
   let { text, id } = item;
 
   return (
-    <li className={classes.item}>
+    <li className={classes.item} draggable="true">
       <div className={classes.textContainer}>
         <button
-          className={classes.toggleButton + " " + (item.done ? classes.done : "")}
+          className={
+            classes.toggleButton + " " + (item.done ? classes.done : "")
+          }
           onClick={todoListCtx.itemClicked.bind(null, id)}
         />
         <p>{text}</p>

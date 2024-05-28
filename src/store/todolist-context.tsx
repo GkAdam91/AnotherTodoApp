@@ -1,11 +1,14 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import { ItemClass } from "../Models/ItemClass";
+import { Layout } from "../Models/LayoutEnum";
 
 export interface ToDoListObj {
   items: ItemClass[];
   itemClicked: (id: string) => void;
   itemDeleted: (id: string) => void;
   addItem: (text: string) => void;
+  changeLayout: () => void;
+  layout: Layout;
 }
 
 export const TodoListContext = React.createContext<ToDoListObj>({
@@ -13,6 +16,8 @@ export const TodoListContext = React.createContext<ToDoListObj>({
   itemClicked: (id: string) => {},
   itemDeleted: (id: string) => {},
   addItem: (text: string) => {},
+  changeLayout: () => {},
+  layout: Layout.List,
 });
 
 const TodoListContextProvider: React.FC<PropsWithChildren> = (props) => {
@@ -57,11 +62,33 @@ const TodoListContextProvider: React.FC<PropsWithChildren> = (props) => {
     });
   };
 
+  const [layout, setLayout] = useState<Layout>(Layout.List);
+
+  useEffect(() => {
+    const layout = JSON.parse(localStorage.getItem("layout") || "1");
+    setLayout(layout);
+  }, []);
+
+  useEffect(() => {
+    const newLayout = JSON.stringify(layout);
+    localStorage.setItem("layout", newLayout);
+  }, [layout]);
+
+  const layoutChangeHandler = () => {
+    if (layout === Layout.List) {
+      setLayout(Layout.Grid);
+    } else {
+      setLayout(Layout.List);
+    }
+  };
+
   const contextValue: ToDoListObj = {
     items: items,
     itemClicked: itemClicked,
     itemDeleted: itemDeleted,
     addItem: addItem,
+    changeLayout: layoutChangeHandler,
+    layout: layout,
   };
 
   return (

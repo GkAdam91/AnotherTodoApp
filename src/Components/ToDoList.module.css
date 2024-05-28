@@ -23,3 +23,11 @@
   background-color: lightgray;
   width: 100%;
 }
+
+.layoutButton {
+  width: 2rem;
+  height: 2rem;
+  align-self: center;
+  background: none;
+  border-radius: 10%;
+}
